@@ -1,0 +1,11 @@
+# Agrega esto a tu ~/.zshrc (o equivalente) en la máquina nueva
+
+# Set nvim as default editor
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+# Fzf + nvim
+alias fzfnvim='nvim $(fzf --preview="bat --theme=gruvbox-dark --color=always {}")'
+
+# Open nvim with current dir if no args
+n() { if [ "$#" -eq 0 ]; then command nvim . ; else command nvim "$@"; fi; }
